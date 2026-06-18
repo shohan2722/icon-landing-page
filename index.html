@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICON MD Medical Spa + Laser Center | Boca Raton · Davie · Boston · Waltham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ──────────────────────────────────────────────── */
+:root {
+  --bg: #FFFFFF;
+  --bg-soft: #F3F5F7;
+  --bg-dark: #0B1A3E;
+  --fg: #111827;
+  --fg-muted: #6B7280;
+  --border: #E5E9F0;
+  --primary: #1F55D8;
+  --primary-dark: #1644B0;
+  --accent: #56D6E6;
+  --accent-dark: #3BBFCF;
+  --surface: #FFFFFF;
+  --gold: #C8A96E;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --container: 1200px;
+  --section-y: 96px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ─── UTILITIES ──────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section-y { padding-top: var(--section-y); padding-bottom: var(--section-y); }
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+.eyebrow--light { color: var(--accent); }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+.section-title--light { color: #fff; }
+.section-body {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--fg-muted);
+  max-width: 600px;
+}
+.section-body--light { color: rgba(255,255,255,0.78); }
+
+/* ─── BUTTONS ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all 200ms var(--ease);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(31,85,216,0.28);
+}
+.btn-accent {
+  background: var(--accent);
+  color: #0B1A3E;
+}
+.btn-accent:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(86,214,230,0.32);
+}
+.btn-outline-light {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.6);
+}
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+}
+.btn-phone {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  font-size: 13px;
+}
+.btn-phone:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ─── FADE-IN ANIMATION ──────────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+
+/* ─── TOP BAR ────────────────────────────────────────────── */
+.top-bar {
+  background: var(--bg-dark);
+  padding: 10px 0;
+  text-align: center;
+}
+.top-bar p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
+}
+.top-bar a { color: var(--accent); font-weight: 600; }
+
+/* ─── NAV ────────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+.nav-logo img {
+  height: 44px;
+  width: auto;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg);
+  opacity: 0.75;
+  transition: opacity 180ms;
+}
+.nav-links a:hover { opacity: 1; color: var(--primary); }
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-phone {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--fg);
+  border-radius: 2px;
+  transition: all 200ms;
+}
+.mobile-menu {
+  display: none;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 24px;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  color: var(--fg);
+}
+.mobile-menu .btn { width: 100%; margin-top: 16px; justify-content: center; }
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero {
+  background: var(--bg);
+  overflow: hidden;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 88vh;
+  align-items: stretch;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 56px 80px 0;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(31,85,216,0.08);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.5vw, 62px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--fg);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--primary);
+}
+.hero-sub {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--fg-muted);
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.hero-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hero-stars-icons {
+  display: flex;
+  gap: 2px;
+}
+.star { color: #F59E0B; font-size: 16px; }
+.hero-stars-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.hero-stars-sub {
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+.hero-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border);
+}
+.hero-cert {
+  font-size: 12px;
+  color: var(--fg-muted);
+  line-height: 1.4;
+}
+.hero-cert strong { color: var(--fg); display: block; font-size: 13px; }
+.hero-image-col {
+  position: relative;
+  overflow: hidden;
+}
+.hero-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.hero-image-badge {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  background: rgba(255,255,255,0.95);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  backdrop-filter: blur(8px);
+}
+.hero-image-badge strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+.hero-image-badge span {
+  font-size: 11px;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ─── TRUST BAR ──────────────────────────────────────────── */
+.trust-bar {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.trust-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: 0.02em;
+}
+.trust-item svg { color: var(--primary); flex-shrink: 0; }
+.trust-sep { width: 1px; height: 24px; background: var(--border); }
+
+/* ─── ABOVE-FOLD TESTIMONIAL ─────────────────────────────── */
+.atf-testimonial {
+  background: var(--bg-dark);
+  padding: 32px 0;
+}
+.atf-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.atf-image {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+}
+.atf-image img { width: 100%; height: 100%; object-fit: cover; }
+.atf-quote {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-style: italic;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.45;
+}
+.atf-author {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.atf-stars { margin-top: 6px; display: flex; gap: 3px; }
+
+/* ─── PROBLEM ────────────────────────────────────────────── */
+.problem { background: var(--bg); }
+.problem-header { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+.problem-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 300ms var(--ease), box-shadow 300ms var(--ease);
+}
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(31,85,216,0.1);
+}
+.problem-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.problem-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms var(--ease);
+}
+.problem-card:hover .problem-card-img img { transform: scale(1.04); }
+.problem-card-body {
+  padding: 20px;
+}
+.problem-card-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--fg);
+}
+.problem-card-text {
+  font-size: 14px;
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+.problem-copy {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+.problem-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+.problem-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--fg);
+  background: var(--bg-soft);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+.problem-list-item::before {
+  content: '✓';
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.problem-truth {
+  background: rgba(31,85,216,0.06);
+  border-left: 3px solid var(--primary);
+  padding: 20px 24px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--fg);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ─── SOLUTION ───────────────────────────────────────────── */
+.solution { background: var(--bg-soft); }
+.solution-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.solution-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+.solution-img-main {
+  grid-column: 1 / -1;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.solution-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.solution-img-secondary {
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.solution-img-secondary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.solution-devices {
+  background: var(--primary);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.solution-device-tag {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 100px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.solution-content { }
+.solution-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 32px;
+}
+.solution-benefit {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.solution-benefit-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(31,85,216,0.1);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.solution-benefit-icon svg { color: var(--primary); }
+.solution-benefit-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.solution-benefit-text {
+  font-size: 14px;
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+
+/* ─── STEPS ──────────────────────────────────────────────── */
+.steps { background: var(--bg); }
+.steps-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.step {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 0;
+  align-items: start;
+}
+.step-content {
+  padding: 40px 48px 40px 0;
+}
+.step:nth-child(even) .step-content {
+  order: 3;
+  padding: 40px 0 40px 48px;
+}
+.step:nth-child(even) .step-image {
+  order: 1;
+}
+.step-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 48px;
+}
+.step-num {
+  width: 52px;
+  height: 52px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.step-line {
+  width: 2px;
+  flex: 1;
+  min-height: 80px;
+  background: linear-gradient(to bottom, var(--primary), var(--border));
+  margin-top: -4px;
+}
+.step:last-child .step-line { display: none; }
+.step-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+.step-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 14px;
+  color: var(--fg);
+}
+.step-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--fg-muted);
+}
+.step-image {
+  padding: 40px 0;
+}
+.step-image img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+.step-cta-row {
+  text-align: center;
+  margin-top: 56px;
+}
+
+/* ─── SOCIAL PROOF ───────────────────────────────────────── */
+.social-proof { background: var(--bg-soft); }
+.sp-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.sp-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+.sp-rating-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1;
+}
+.sp-rating-stars { display: flex; gap: 3px; }
+.sp-rating-count { font-size: 13px; color: var(--fg-muted); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: box-shadow 300ms;
+}
+.testimonial-card:hover { box-shadow: 0 8px 32px rgba(31,85,216,0.08); }
+.tc-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+.tc-quote {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--fg);
+  margin-bottom: 20px;
+}
+.tc-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.tc-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-soft);
+  flex-shrink: 0;
+}
+.tc-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.tc-name { font-size: 14px; font-weight: 600; color: var(--fg); }
+.tc-location { font-size: 12px; color: var(--fg-muted); }
+.tc-service { font-size: 11px; color: var(--primary); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 2px; }
+
+/* ─── B&A GALLERY ────────────────────────────────────────── */
+.gallery-section { background: var(--bg); }
+.gallery-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+.ba-label {
+  display: inline-block;
+  background: rgba(31,85,216,0.08);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.gallery-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 400ms var(--ease);
+}
+.gallery-item:hover img { transform: scale(1.03); }
+.gallery-item-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(11,26,62,0.85), transparent);
+  padding: 24px 16px 14px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.gallery-cta { text-align: center; margin-top: 40px; }
+
+/* ─── WHATS INCLUDED ──────────────────────────────────────── */
+.included { background: var(--bg-dark); }
+.included-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.included-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+.included-image img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.included-image-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+}
+.included-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 32px;
+}
+.included-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 200ms;
+}
+.included-item:hover { background: rgba(255,255,255,0.1); }
+.included-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.included-icon svg { color: var(--bg-dark); }
+.included-item-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+.included-item-text { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+.included-cta { margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* ─── AUTHORITY ──────────────────────────────────────────── */
+.authority { background: var(--bg-soft); }
+.authority-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.authority-content { }
+.authority-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.authority-image img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top center;
+}
+.authority-body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--fg-muted);
+  margin: 24px 0;
+}
+.authority-highlight {
+  background: rgba(31,85,216,0.07);
+  border-left: 3px solid var(--primary);
+  padding: 16px 20px;
+  font-size: 15px;
+  color: var(--fg);
+  font-style: italic;
+  margin-bottom: 28px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.authority-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.authority-stat {
+  text-align: center;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.authority-stat-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.authority-stat-label { font-size: 12px; color: var(--fg-muted); }
+.authority-locations { margin-top: 28px; }
+.authority-locations p { font-size: 14px; color: var(--fg-muted); margin-bottom: 8px; font-weight: 500; }
+.authority-locations .locs { display: flex; gap: 8px; flex-wrap: wrap; }
+.loc-tag {
+  background: rgba(31,85,216,0.08);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+/* ─── IS THIS FOR ME ─────────────────────────────────────── */
+.for-me { background: var(--bg); }
+.for-me-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.for-me-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 400;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+.for-me-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+.for-me-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  background: rgba(31,85,216,0.04);
+  border: 1px solid rgba(31,85,216,0.12);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  color: var(--fg);
+  line-height: 1.5;
+  transition: background 200ms;
+}
+.for-me-item:hover { background: rgba(31,85,216,0.08); }
+.for-me-check {
+  width: 22px;
+  height: 22px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.not-for-me {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+}
+.not-for-me-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--fg);
+}
+.not-for-me-list { display: flex; flex-direction: column; gap: 12px; }
+.not-for-me-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--fg-muted);
+  line-height: 1.5;
+}
+.not-for-me-item::before {
+  content: '×';
+  color: #DC2626;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+.for-me-cta { margin-top: 32px; }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+.faq { background: var(--bg-soft); }
+.faq-header { text-align: center; max-width: 600px; margin: 0 auto 56px; }
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 150ms;
+}
+.faq-question:hover { background: var(--bg-soft); }
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  background: rgba(31,85,216,0.1);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: transform 200ms, background 200ms;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--primary);
+  color: #fff;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms var(--ease);
+}
+.faq-answer-inner {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.faq-item.open .faq-answer { max-height: 300px; }
+
+/* ─── FINAL CTA ──────────────────────────────────────────── */
+.final-cta {
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta-bg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.18;
+}
+.final-cta-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.final-cta-content { }
+.final-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.final-cta-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+.final-cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.final-cta-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.final-cta-image img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top center;
+}
+.final-cta-reassurance {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+}
+.reassurance-item::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+.footer {
+  background: #050E24;
+  padding: 56px 0 32px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 28px;
+}
+.footer-logo img {
+  height: 42px;
+  width: auto;
+  margin-bottom: 16px;
+}
+.footer-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.footer-phone {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.footer-col-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+}
+.footer-col-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-col-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  transition: color 150ms;
+}
+.footer-col-links a:hover { color: #fff; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bottom-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+}
+.footer-bottom-links { display: flex; gap: 20px; }
+.footer-bottom-links a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  transition: color 150ms;
+}
+.footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+/* ─── STICKY PHONE CTA (mobile) ──────────────────────────── */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--primary);
+  padding: 14px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+.sticky-cta a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.sticky-cta span { font-size: 11px; color: rgba(255,255,255,0.75); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root { --section-y: 72px; }
+  .hero-content { padding: 64px 40px 64px 0; }
+  .hero-title { font-size: clamp(34px, 5vw, 52px); }
+  .problem-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-list .step { grid-template-columns: 1fr 64px 1fr; }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  :root { --section-y: 56px; }
+  .top-bar p { font-size: 12px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; min-height: auto; }
+  .hero-content { padding: 48px 0 40px; }
+  .hero-image-col { height: 55vw; }
+  .hero-actions { gap: 12px; }
+  .hero-trust { flex-wrap: wrap; gap: 12px; }
+  .hero-divider { display: none; }
+  .trust-bar-inner { gap: 20px; }
+  .trust-sep { display: none; }
+  .atf-inner { flex-direction: column; gap: 20px; text-align: center; }
+  .atf-stars { justify-content: center; }
+  .problem-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .problem-list { grid-template-columns: 1fr; }
+  .solution-inner { grid-template-columns: 1fr; gap: 40px; }
+  .solution-images { order: -1; }
+  .steps-list .step { grid-template-columns: 1fr; }
+  .step-content { padding: 0 0 24px; }
+  .step:nth-child(even) .step-content { order: 0; padding: 0 0 24px; }
+  .step:nth-child(even) .step-image { order: 0; }
+  .step-spine { display: none; }
+  .step-image { padding: 0 0 8px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .included-inner { grid-template-columns: 1fr; gap: 40px; }
+  .included-image { max-height: 400px; }
+  .authority-inner { grid-template-columns: 1fr; gap: 40px; }
+  .authority-stats { grid-template-columns: repeat(3, 1fr); }
+  .for-me-inner { grid-template-columns: 1fr; gap: 40px; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .final-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  .final-cta-image { max-height: 360px; overflow: hidden; }
+  .final-cta-image img { aspect-ratio: 4/3; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .sticky-cta { display: flex; }
+  body { padding-bottom: 70px; }
+}
+
+@media (max-width: 480px) {
+  .problem-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .authority-stats { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .hero-actions .btn { width: 100%; text-align: center; justify-content: center; }
+  .final-cta-actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <p>Limited new patient slots available — <a href="#final-cta">Book your free consultation today</a></p>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="ICON MD Medical Spa home">
+        <img src="mqjihh2i-logo.png" alt="ICON MD Medical Spa + Laser Center">
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-cta">
+        <a href="tel:5614092340" class="nav-phone">(561) 409-2340</a>
+        <a href="#final-cta" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Book Free Consult</a>
+      </div>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#results">Results</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="tel:5614092340" class="btn btn-phone" style="margin-top:12px;">Call (561) 409-2340</a>
+    <a href="#final-cta" class="btn btn-primary">Book Free Consultation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" data-od-id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content fade-in">
+        <div class="hero-badge">Board-Certified Dermatologist Oversight</div>
+        <h1 class="hero-title">
+          Smooth, Youthful, Confident –<br>
+          <em>Without Surgery,</em><br>Without Looking Overdone
+        </h1>
+        <p class="hero-sub">At ICON MD, we combine medical precision with a luxury experience. Treatments that are safe, effective, and personalized – because you're not just a number, and your results shouldn't look like everyone else's.</p>
+        <div class="hero-actions">
+          <a href="#final-cta" class="btn btn-primary">Book My Free Consultation</a>
+          <a href="tel:5614092340" class="btn btn-phone">(561) 409-2340</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-stars">
+            <div class="hero-stars-icons">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <div>
+              <div class="hero-stars-text">5.0 Stars</div>
+              <div class="hero-stars-sub">35 Verified Reviews</div>
+            </div>
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-cert">
+            <strong>Dr. Amelia, MD</strong>
+            Board-Certified Dermatologist
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-cert">
+            <strong>4 Locations</strong>
+            Boca Raton · Davie · Boston · Waltham
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-col fade-in fade-in-delay-2">
+        <img src="mqjihi83-imgi_19_other-services.jpg" alt="Medical aesthetics treatment at ICON MD" loading="eager">
+        <div class="hero-image-badge">
+          <strong>Free</strong>
+          <span>Consultation — No Obligation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner fade-in">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Candela GentleMax Pro
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Morpheus8
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        EMSculpt NEO
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+        FDA-Cleared Injectables
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        CoolSculpting Elite
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Master Injectors
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOVE-FOLD TESTIMONIAL -->
+<div class="atf-testimonial">
+  <div class="container">
+    <div class="atf-inner">
+      <div class="atf-image">
+        <img src="mqjihh1z-imgi_25_gallery-juvederm.jpg" alt="Patient result">
+      </div>
+      <div>
+        <p class="atf-quote">"I look refreshed, not overdone. My friends just say I look well-rested. That's exactly what I wanted."</p>
+        <div class="atf-author">— Jennifer L., Boston &nbsp;·&nbsp; Injectables Patient</div>
+        <div class="atf-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM SECTION -->
+<section class="problem section-y" id="services" data-od-id="problem">
+  <div class="container">
+    <div class="problem-header fade-in">
+      <p class="eyebrow">What Brought You Here Today?</p>
+      <h2 class="section-title">You Deserve More Than Another Temporary Fix</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card fade-in">
+        <div class="problem-card-img">
+          <img src="mqjihh0f-imgi_21_gallery-gentlemax.jpg" alt="Laser hair removal result" loading="lazy">
+        </div>
+        <div class="problem-card-body">
+          <div class="problem-card-title">Unwanted Hair</div>
+          <p class="problem-card-text">Hours spent shaving, waxing, plucking. The bikini line before beach season. The upper lip every morning. The underarms that stay irritated.</p>
+        </div>
+      </div>
+      <div class="problem-card fade-in fade-in-delay-1">
+        <div class="problem-card-img">
+          <img src="mqjihh0p-imgi_22_gallery-kybella.jpg" alt="Jawline and skin tightening result" loading="lazy">
+        </div>
+        <div class="problem-card-body">
+          <div class="problem-card-title">Sagging &amp; Jawline</div>
+          <p class="problem-card-text">The sagging jawline. The skin laxity that crept in over the years. You want definition and firmness without going under the knife.</p>
+        </div>
+      </div>
+      <div class="problem-card fade-in fade-in-delay-2">
+        <div class="problem-card-img">
+          <img src="mqjihi5p-imgi_15_menu_botox.jpg" alt="Skin aging and wrinkle treatment" loading="lazy">
+        </div>
+        <div class="problem-card-body">
+          <div class="problem-card-title">Fine Lines &amp; Aging Skin</div>
+          <p class="problem-card-text">The fine lines that weren't there last year. The dullness that makes you look tired even when you're not. You want to look refreshed, naturally.</p>
+        </div>
+      </div>
+      <div class="problem-card fade-in fade-in-delay-3">
+        <div class="problem-card-img">
+          <img src="mqjihi4n-imgi_14_Fit-woman-measures-her-waist-size.jpg" alt="Body contouring and fat reduction" loading="lazy">
+        </div>
+        <div class="problem-card-body">
+          <div class="problem-card-title">Stubborn Body Fat</div>
+          <p class="problem-card-text">The belly pouch that won't budge no matter how many crunches you do. Non-surgical solutions that actually deliver measurable results.</p>
+        </div>
+      </div>
+    </div>
+    <div class="problem-copy fade-in">
+      <p class="section-body" style="margin:0 auto; text-align:center;">You've tried creams, gadgets, and "miracle" products. You're scared of looking overdone. You don't have weeks of downtime for surgery. <strong>These feelings are valid — and they are solvable.</strong></p>
+    </div>
+    <div class="problem-list fade-in">
+      <div class="problem-list-item">Tried creams and gadgets — nothing worked</div>
+      <div class="problem-list-item">Scared of looking overdone or "plastic"</div>
+      <div class="problem-list-item">No time for surgical downtime</div>
+      <div class="problem-list-item">Worried about choosing the wrong provider</div>
+      <div class="problem-list-item">Tired of spending money on temporary fixes</div>
+      <div class="problem-list-item">Unsure which treatment is right for you</div>
+    </div>
+    <div class="problem-truth fade-in">
+      They require a medical-grade approach, performed by skilled hands, guided by a board-certified physician — not another cream or at-home device.
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution section-y" data-od-id="solution">
+  <div class="container">
+    <div class="solution-inner">
+      <div class="solution-images fade-in">
+        <div class="solution-img-main">
+          <img src="mqjihi83-imgi_19_other-services.jpg" alt="ICON MD medical aesthetics partnership" loading="lazy">
+        </div>
+        <div class="solution-img-secondary">
+          <img src="mqjihi68-imgi_17_menu_rf-micro.jpg" alt="RF microneedling treatment" loading="lazy">
+        </div>
+        <div class="solution-devices">
+          <div class="solution-device-tag">Candela GentleMax Pro</div>
+          <div class="solution-device-tag">Morpheus8</div>
+          <div class="solution-device-tag">EMSculpt NEO</div>
+          <div class="solution-device-tag">CoolSculpting Elite</div>
+          <div class="solution-device-tag">HydraFacial</div>
+          <div class="solution-device-tag">SkinPen Microneedling</div>
+        </div>
+      </div>
+      <div class="solution-content fade-in fade-in-delay-2">
+        <p class="eyebrow">The Solution</p>
+        <h2 class="section-title">More Than a Treatment.<br>A Partnership.</h2>
+        <p class="section-body" style="margin-top:20px;">At ICON MD, we don't just "do" procedures. We create a plan. A personalized roadmap that addresses your unique anatomy, your concerns, and your goals.</p>
+        <div class="solution-benefits">
+          <div class="solution-benefit">
+            <div class="solution-benefit-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="solution-benefit-title">Advanced Technology</div>
+              <p class="solution-benefit-text">The most advanced devices on the market — the gold standard in laser hair removal, skin tightening, and body contouring.</p>
+            </div>
+          </div>
+          <div class="solution-benefit">
+            <div class="solution-benefit-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="solution-benefit-title">Expert Medical Team</div>
+              <p class="solution-benefit-text">Master injectors, certified nurse practitioners, and physician assistants — all under the supervision of Dr. Amelia, Board-Certified Dermatologist.</p>
+            </div>
+          </div>
+          <div class="solution-benefit">
+            <div class="solution-benefit-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <div class="solution-benefit-title">Natural-Looking Results</div>
+              <p class="solution-benefit-text">You should look like the best version of you, not like someone else. Enhancement, not transformation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS TO SUCCESS -->
+<section class="steps section-y" data-od-id="steps">
+  <div class="container">
+    <div class="steps-header fade-in">
+      <p class="eyebrow">Your Journey</p>
+      <h2 class="section-title">5 Steps to Looking &amp; Feeling Your Best</h2>
+    </div>
+    <div class="steps-list">
+
+      <!-- Step 1 -->
+      <div class="step">
+        <div class="step-content fade-in">
+          <div class="step-label">Step 1</div>
+          <h3 class="step-title">Complimentary Consultation — The Clarity Conversation</h3>
+          <p class="step-text">You sit down (or video call) with one of our experienced providers. We listen. We examine. We explain what's possible and what's not — honestly, with no pressure. By the end, you know exactly what treatments fit your goals, timeline, and budget.</p>
+        </div>
+        <div class="step-spine">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-image fade-in fade-in-delay-2">
+          <img src="mqjihi2x-imgi_11_menu_testimonials.jpg" alt="Consultation at ICON MD" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <div class="step-content fade-in fade-in-delay-2">
+          <div class="step-label">Step 2</div>
+          <h3 class="step-title">Personalized Treatment Plan — Your Blueprint</h3>
+          <p class="step-text">We create a step-by-step plan tailored to your anatomy. How many sessions? Which device? What to expect? You get a clear roadmap, not a vague promise. No guesswork.</p>
+        </div>
+        <div class="step-spine">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-image fade-in">
+          <img src="mqjihi83-imgi_19_other-services.jpg" alt="Personalized treatment plan" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <div class="step-content fade-in">
+          <div class="step-label">Step 3</div>
+          <h3 class="step-title">Treatment — Comfort, Safety, Results</h3>
+          <p class="step-text">We guide you through each treatment in our state-of-the-art facility. Our team ensures your comfort, explains each step, and checks in afterward. Most treatments are quick, virtually painless, and require zero downtime.</p>
+        </div>
+        <div class="step-spine">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-image fade-in fade-in-delay-2">
+          <img src="mqjihi68-imgi_17_menu_rf-micro.jpg" alt="Treatment at ICON MD" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <div class="step-content fade-in fade-in-delay-2">
+          <div class="step-label">Step 4</div>
+          <h3 class="step-title">See the Transformation — Track Your Progress</h3>
+          <p class="step-text">Most patients see visible improvement within weeks. We document your results with photos so you can see the change. And we adjust the plan as needed — because your body is unique, and we treat it that way.</p>
+        </div>
+        <div class="step-spine">
+          <div class="step-num">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-image fade-in">
+          <img src="mqjihh1n-imgi_24_gallery-hydrafacial.jpg" alt="Patient transformation results" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step">
+        <div class="step-content fade-in">
+          <div class="step-label">Step 5</div>
+          <h3 class="step-title">Maintain &amp; Optimize — Become a VIP</h3>
+          <p class="step-text">After you achieve your initial goals, we help you maintain them. Our VIP membership program makes it effortless to keep your results — and you get exclusive discounts and priority booking. Many of our patients tell us, "I'm never going back to my old routine."</p>
+        </div>
+        <div class="step-spine">
+          <div class="step-num">5</div>
+        </div>
+        <div class="step-image fade-in fade-in-delay-2">
+          <img src="mqjihi83-imgi_19_other-services.jpg" alt="VIP Membership at ICON MD" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+    <div class="step-cta-row fade-in">
+      <a href="#final-cta" class="btn btn-primary" style="font-size:15px;padding:16px 40px;">Let's Build Your Personalized Plan — Book Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof section-y" id="results" data-od-id="social-proof">
+  <div class="container">
+    <div class="sp-header fade-in">
+      <div class="sp-rating">
+        <span class="sp-rating-num">5.0</span>
+        <div class="sp-rating-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <span class="sp-rating-count">Based on 35 Verified Reviews</span>
+      </div>
+      <p class="eyebrow">Real People, Real Results</p>
+      <h2 class="section-title">35 Five-Star Reviews Can't Be Wrong</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-quote">"I was so tired of shaving and waxing. I tried everything. Then a friend told me about ICON MD and the Candela laser. The staff is so professional and made me feel comfortable. After my sessions, I am completely hair-free on my legs and underarms. Best decision ever."</p>
+        <div class="tc-author">
+          <div class="tc-avatar"><img src="mqjihh0f-imgi_21_gallery-gentlemax.jpg" alt="Sarah M." loading="lazy"></div>
+          <div>
+            <div class="tc-name">Sarah M.</div>
+            <div class="tc-location">Boca Raton, FL</div>
+            <div class="tc-service">Laser Hair Removal</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-1">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-quote">"I was terrified of looking 'frozen' or fake. Dr. Amelia's team took the time to understand what I wanted – natural results. My friends just say I look well-rested. That's exactly what I wanted."</p>
+        <div class="tc-author">
+          <div class="tc-avatar"><img src="mqjihh1z-imgi_25_gallery-juvederm.jpg" alt="Jennifer L." loading="lazy"></div>
+          <div>
+            <div class="tc-name">Jennifer L.</div>
+            <div class="tc-location">Boston, MA</div>
+            <div class="tc-service">Injectables</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-2">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-quote">"I tried diet and exercise, but nothing would budge my belly pouch. After my EMSculpt NEO sessions, I can actually see the difference in my clothes. My husband noticed without me saying anything. Worth every penny."</p>
+        <div class="tc-author">
+          <div class="tc-avatar"><img src="mqjihi4n-imgi_14_Fit-woman-measures-her-waist-size.jpg" alt="Maria G." loading="lazy"></div>
+          <div>
+            <div class="tc-name">Maria G.</div>
+            <div class="tc-location">Davie, FL</div>
+            <div class="tc-service">Body Contouring</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-in" style="max-width:680px;margin:0 auto 48px;">
+      <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="tc-quote" style="font-size:19px;">"I was nervous walking in, but the staff greeted me by name and made me feel like I was the only patient. The facility is clean and beautiful, equipment is brand new. I joined the VIP program and am getting my first HydraFacial and fillers next week. I'm hooked."</p>
+      <div class="tc-author">
+        <div class="tc-avatar"><img src="mqjihh1n-imgi_24_gallery-hydrafacial.jpg" alt="Lisa R." loading="lazy"></div>
+        <div>
+          <div class="tc-name">Lisa R.</div>
+          <div class="tc-location">Waltham, MA</div>
+          <div class="tc-service">First-Time Experience · VIP Member</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER GALLERY -->
+<section class="gallery-section section-y" data-od-id="gallery">
+  <div class="container">
+    <div class="gallery-header fade-in">
+      <p class="eyebrow">Before &amp; After Gallery</p>
+      <h2 class="section-title">Real Patient Transformations</h2>
+      <p class="section-body" style="margin:16px auto 0;text-align:center;">Every result you see is from a real ICON MD patient. Natural-looking, medically precise, lasting.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in">
+        <img src="mqjihhwe-ChatGPT-Image-Jun-18_-2026_-04_24_04-PM.png" alt="Kybella jawline before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Kybella + Fillers</div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-1">
+        <img src="mqjihhtd-ChatGPT-Image-Jun-18_-2026_-04_23_58-PM.png" alt="Fillers before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Injectable Fillers</div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-2">
+        <img src="mqjihhpr-ChatGPT-Image-Jun-18_-2026_-04_23_46-PM.png" alt="Jawline chin contouring before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Kybella · Chin Contouring</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="mqjihhjh-ChatGPT-Image-Jun-18_-2026_-04_23_38-PM.png" alt="Skin clearing acne before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Laser Skin Rejuvenation</div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-1">
+        <img src="mqjihhdg-ChatGPT-Image-Jun-18_-2026_-04_23_34-PM.png" alt="Botox forehead lines before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Botox · Forehead Lines</div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-2">
+        <img src="mqjihhlv-ChatGPT-Image-Jun-18_-2026_-04_23_42-PM.png" alt="Botox results before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Botox · Wrinkle Reduction</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="mqjihh9z-ChatGPT-Image-Jun-18_-2026_-04_23_29-PM.png" alt="Lip filler before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Lip Enhancement</div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-1">
+        <img src="mqjihh6y-ChatGPT-Image-Jun-18_-2026_-04_23_25-PM.png" alt="Lip filler before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Lip Fillers</div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-2">
+        <img src="mqjihh3g-ChatGPT-Image-Jun-18_-2026_-04_23_20-PM.png" alt="Lip augmentation before and after" loading="lazy">
+        <div class="gallery-item-label"><span class="ba-label">Before / After</span>&nbsp; Lip Augmentation</div>
+      </div>
+    </div>
+    <div class="gallery-cta fade-in">
+      <a href="#final-cta" class="btn btn-primary">Join Our 5-Star Patients — Schedule Your Consult</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included section-y" data-od-id="included">
+  <div class="container">
+    <div class="included-inner">
+      <div class="included-image fade-in">
+        <img src="mqjihi83-imgi_19_other-services.jpg" alt="ICON MD consultation" loading="lazy">
+        <div class="included-image-badge">100% Free · No Obligation</div>
+      </div>
+      <div class="fade-in fade-in-delay-2">
+        <p class="eyebrow eyebrow--light">What You Get</p>
+        <h2 class="section-title section-title--light">What's Included in Your Free Consultation at ICON MD</h2>
+        <div class="included-items">
+          <div class="included-item">
+            <div class="included-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+            <div>
+              <div class="included-item-title">1-on-1 Session with a Licensed Medical Provider</div>
+              <p class="included-item-text">Not a salesperson, not a receptionist. A real expert who understands your anatomy.</p>
+            </div>
+          </div>
+          <div class="included-item">
+            <div class="included-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+            <div>
+              <div class="included-item-title">Thorough Skin, Hair &amp; Body Assessment</div>
+              <p class="included-item-text">We examine your specific concerns — not just hand you a brochure.</p>
+            </div>
+          </div>
+          <div class="included-item">
+            <div class="included-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg></div>
+            <div>
+              <div class="included-item-title">Honest Recommendations That Actually Work for You</div>
+              <p class="included-item-text">We will tell you if a treatment is not right for your skin type or goals. No upselling.</p>
+            </div>
+          </div>
+          <div class="included-item">
+            <div class="included-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
+            <div>
+              <div class="included-item-title">Clear Treatment Plan with Pricing Up Front</div>
+              <p class="included-item-text">No surprises, no hidden fees. You decide what fits your budget.</p>
+            </div>
+          </div>
+          <div class="included-item">
+            <div class="included-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <div>
+              <div class="included-item-title">Access to Our Complete Device Portfolio</div>
+              <p class="included-item-text">Candela GentleMax Pro, Morpheus8, EMSculpt NEO, CoolSculpting Elite, HydraFacial, SkinPen, and more.</p>
+            </div>
+          </div>
+          <div class="included-item">
+            <div class="included-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div>
+              <div class="included-item-title">Continuity of Care &amp; Complimentary Follow-Up</div>
+              <p class="included-item-text">You see the same provider throughout your journey. We check in after treatment to ensure you're happy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="included-cta">
+          <a href="#final-cta" class="btn btn-accent">Get My Free Consultation</a>
+          <a href="tel:5614092340" class="btn btn-outline-light">(561) 409-2340</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY -->
+<section class="authority section-y" id="about" data-od-id="authority">
+  <div class="container">
+    <div class="authority-inner">
+      <div class="authority-content fade-in">
+        <p class="eyebrow">Why ICON MD Is Different</p>
+        <h2 class="section-title">We Are a Medical Facility First,<br>a Spa Second</h2>
+        <p class="authority-body">When you walk into a typical medspa, you're often greeted by a receptionist who passes you off to a salesperson who tries to sell you a package. At ICON MD, we do it differently.</p>
+        <div class="authority-highlight">
+          Our medical director, Dr. Amelia, is a Board-Certified Dermatologist. Every treatment at ICON MD is performed by licensed staff — nurse practitioners, physician assistants, registered nurses — under her supervision.
+        </div>
+        <p class="authority-body" style="margin:0 0 8px;">We've been there. We've seen the bad results from other places. The overfilled lips. The patchy laser removal. The wasted money. That's why we invest in the best equipment and the best people.</p>
+        <p style="font-size:15px;color:var(--fg);font-weight:600;">Our mission: Help you look and feel your best — naturally, safely, and with dignity.</p>
+        <div class="authority-stats">
+          <div class="authority-stat">
+            <div class="authority-stat-num">35+</div>
+            <div class="authority-stat-label">5-Star Reviews</div>
+          </div>
+          <div class="authority-stat">
+            <div class="authority-stat-num">4</div>
+            <div class="authority-stat-label">Locations</div>
+          </div>
+          <div class="authority-stat">
+            <div class="authority-stat-num">MD</div>
+            <div class="authority-stat-label">Board-Certified Oversight</div>
+          </div>
+        </div>
+        <div class="authority-locations">
+          <p>Serving patients across:</p>
+          <div class="locs">
+            <span class="loc-tag">Boca Raton</span>
+            <span class="loc-tag">Davie</span>
+            <span class="loc-tag">Boston</span>
+            <span class="loc-tag">Waltham</span>
+          </div>
+        </div>
+      </div>
+      <div class="authority-image fade-in fade-in-delay-2">
+        <img src="mqjihi6m-imgi_18_peptide.jpg" alt="ICON MD medical team expertise" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IS THIS FOR ME -->
+<section class="for-me section-y" data-od-id="for-me">
+  <div class="container">
+    <div class="for-me-inner">
+      <div class="fade-in">
+        <p class="eyebrow">Is This Right for You?</p>
+        <h2 class="for-me-title">This Is For You If You Recognize Any of These</h2>
+        <div class="for-me-list">
+          <div class="for-me-item"><div class="for-me-check">✓</div>You're tired of shaving, waxing, or plucking — and you want smooth, hair-free skin without the constant maintenance.</div>
+          <div class="for-me-item"><div class="for-me-check">✓</div>You look in the mirror and see lines, sagging, or dullness — and you want to look refreshed without looking like you "had work done."</div>
+          <div class="for-me-item"><div class="for-me-check">✓</div>You have stubborn fat that won't budge with diet and exercise — and you're ready for a non-surgical solution that actually works.</div>
+          <div class="for-me-item"><div class="for-me-check">✓</div>You've been burned by bad medspa experiences — and you're looking for a provider you can trust, with medical oversight and proven results.</div>
+          <div class="for-me-item"><div class="for-me-check">✓</div>You want a personalized approach — you don't want a one-size-fits-all treatment plan. You want someone who listens and creates a plan for your unique needs.</div>
+        </div>
+        <div class="for-me-cta">
+          <a href="#final-cta" class="btn btn-primary">Yes, This Is Me — I Want My Consultation</a>
+        </div>
+      </div>
+      <div class="fade-in fade-in-delay-2">
+        <div class="not-for-me">
+          <h3 class="not-for-me-title">This Is NOT For You If:</h3>
+          <div class="not-for-me-list">
+            <div class="not-for-me-item">You're looking for a "magic pill" or overnight results without any commitment.</div>
+            <div class="not-for-me-item">You want results that look unnatural or "overdone" — we believe in enhancement, not transformation.</div>
+            <div class="not-for-me-item">You're not willing to invest in quality — our treatments are medical-grade and priced accordingly.</div>
+            <div class="not-for-me-item">You're not ready to have an honest conversation about your health history and goals.</div>
+            <div class="not-for-me-item">You're looking for a bargain basement discount deal — we offer value, not cheap prices.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section-y" id="faq" data-od-id="faq">
+  <div class="container">
+    <div class="faq-header fade-in">
+      <p class="eyebrow">Common Questions</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          Will it hurt?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Most of our treatments involve minimal discomfort. Laser hair removal feels like a warm snap. Injectables use tiny needles. We use numbing creams and cooling devices to maximize comfort. Our patients regularly tell us, "That's it? That was nothing."</div>
+        </div>
+      </div>
+      <div class="faq-item fade-in fade-in-delay-1">
+        <button class="faq-question" aria-expanded="false">
+          How much does it cost?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Every treatment is priced based on your specific plan — the area, the number of sessions, the technology used. During your free consultation, we provide a complete price breakdown with no surprises. We also offer promotions for new patients and a VIP membership program for ongoing care.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          How do I know your injectors are qualified?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Our team includes Master Injectors, Nurse Practitioners (CNP, FNP-C), and Physician Assistants (PA-C) — all under the supervision of Dr. Amelia, a Board-Certified Dermatologist. We are a medical facility, not a spa. You are in extremely capable hands.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-in fade-in-delay-1">
+        <button class="faq-question" aria-expanded="false">
+          Will my results look natural?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes — that's our specialty. We believe in enhancement, not transformation. Our providers use techniques that preserve your unique features while reducing unwanted signs of aging or hair. Most people will say, "You look great!" not "What did you do?"</div>
+        </div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          Is there any downtime?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">For most treatments, downtime is minimal to none. You can return to work or normal activities immediately after injectables or laser hair removal (just avoid sun exposure). Some treatments like Morpheus8 may have a few days of redness, which we'll explain in detail during your consult.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-in fade-in-delay-1">
+        <button class="faq-question" aria-expanded="false">
+          What if I'm not happy with the results?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We stand behind our work. We will discuss realistic expectations during your consult and document your progress with photos. If adjustments are needed, we address them. Our goal is your satisfaction — not just a transaction.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          Do you offer packages or memberships?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. We have a VIP Membership program that provides discounts on treatments, priority booking, and exclusive offers. Ask about it during your consultation or visit our Membership page for details.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-in fade-in-delay-1">
+        <button class="faq-question" aria-expanded="false">
+          Can men come to ICON MD?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolutely. We treat many men for laser hair removal (back, chest, beard), Botox, fillers, body contouring, and weight loss. Our approach is gender-inclusive and focused on individual goals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta section-y" id="final-cta" data-od-id="final-cta">
+  <img src="mqjihi6m-imgi_18_peptide.jpg" alt="" class="final-cta-bg" aria-hidden="true">
+  <div class="container">
+    <div class="final-cta-inner">
+      <div class="final-cta-content fade-in">
+        <p class="eyebrow eyebrow--light">Your Transformation Starts Here</p>
+        <h2 class="final-cta-title">Will You Take the First Step?</h2>
+        <p class="final-cta-sub">You've read about our approach. You've seen the proof. You know what you want to change. Now the only question is: Will you take the first step toward looking and feeling your best — without surgery, without downtime, without looking overdone?</p>
+        <div class="final-cta-actions">
+          <a href="#" class="btn btn-accent" style="font-size:15px;padding:16px 36px;">Get My Free Consultation</a>
+          <a href="tel:5614092340" class="btn btn-outline-light" style="font-size:15px;padding:16px 36px;">(561) 409-2340</a>
+        </div>
+        <div class="final-cta-reassurance">
+          <div class="reassurance-item">Free consultation</div>
+          <div class="reassurance-item">No obligation</div>
+          <div class="reassurance-item">Real results</div>
+          <div class="reassurance-item">No pressure</div>
+        </div>
+        <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.5);">Or, if you're still unsure: No pressure. Browse our before/after gallery, read more reviews, or call us directly. But don't wait too long — new patient slots fill quickly, and you deserve to see what's possible for you.</p>
+      </div>
+      <div class="final-cta-image fade-in fade-in-delay-2">
+        <img src="mqjihi83-imgi_19_other-services.jpg" alt="ICON MD Medical Spa results" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" data-od-id="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="mqjihh2i-logo.png" alt="ICON MD Medical Spa + Laser Center">
+        <p class="footer-desc">Luxury medical spa combining medical precision with a premium spa experience. Board-certified dermatologist oversight. Serving Boca Raton, Davie, Boston, and Waltham.</p>
+        <div class="footer-phone"><a href="tel:5614092340">(561) 409-2340</a></div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-col-links">
+          <a href="#services">Laser Hair Removal</a>
+          <a href="#services">Botox &amp; Fillers</a>
+          <a href="#services">Morpheus8</a>
+          <a href="#services">Body Contouring</a>
+          <a href="#services">HydraFacial</a>
+          <a href="#services">Skin Rejuvenation</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Locations</div>
+        <div class="footer-col-links">
+          <a href="#">Boca Raton, FL</a>
+          <a href="#">Davie, FL</a>
+          <a href="#">Boston, MA</a>
+          <a href="#">Waltham, MA</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-col-links">
+          <a href="#results">Before &amp; After</a>
+          <a href="#about">About Us</a>
+          <a href="#faq">FAQ</a>
+          <a href="#final-cta">Book Now</a>
+          <a href="tel:5614092340">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">© 2026 ICON MD Medical Spa + Laser Center. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Medical Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="#final-cta">Book My Free Consultation</a>
+  <span>No obligation · No pressure</span>
+</div>
+
+<script>
+// ─── HAMBURGER ────────────────────────────────────────────
+const hamburger = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+
+// ─── FADE IN ON SCROLL ─────────────────────────────────────
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+fadeEls.forEach(el => observer.observe(el));
+
+// ─── FAQ ACCORDION ─────────────────────────────────────────
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    // close all
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    // open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// ─── NAV SCROLL SHADOW ────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) {
+    nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+}, { passive: true });
+</script>
+</body>
+</html>

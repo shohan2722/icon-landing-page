@@ -1,3 +1,5 @@
 {
-  "name": "icon-landing-page"
+  "name": "iconmed-landing-page",
+  "buildCommand": "",
+  "outputDirectory": "."
 }
