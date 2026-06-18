@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "ICON MD Medical Spa + Laser Center — Landing Page",
+  "entry": "icon-md-landing-2.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "primary": true,
+  "createdAt": "2026-06-18T13:25:54.627Z",
+  "updatedAt": "2026-06-18T13:33:29.496Z",
+  "sourceSkillId": "agent-browser",
+  "designSystemId": "default",
+  "metadata": {
+    "identifier": "icon-md-landing",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}

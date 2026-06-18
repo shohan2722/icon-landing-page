@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Python/pythoncore-3.14-64/Doc/html/library/email.html",
+  "entry": "Python/pythoncore-3.14-64/Doc/html/library/email.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-18T13:10:35.003Z",
+  "updatedAt": "2026-06-18T13:10:35.003Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

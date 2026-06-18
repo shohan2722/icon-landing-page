@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Python/pythoncore-3.14-64/Doc/html/tutorial/interactive.html",
+  "entry": "Python/pythoncore-3.14-64/Doc/html/tutorial/interactive.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-18T13:10:35.297Z",
+  "updatedAt": "2026-06-18T13:10:35.297Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

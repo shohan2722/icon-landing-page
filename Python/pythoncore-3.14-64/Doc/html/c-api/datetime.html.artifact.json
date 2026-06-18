@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Python/pythoncore-3.14-64/Doc/html/c-api/datetime.html",
+  "entry": "Python/pythoncore-3.14-64/Doc/html/c-api/datetime.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-18T13:10:34.658Z",
+  "updatedAt": "2026-06-18T13:10:34.658Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

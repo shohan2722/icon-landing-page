@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "icon-md-landing-3.html",
+  "entry": "icon-md-landing-3.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-18T13:36:19.547Z",
+  "updatedAt": "2026-06-18T13:36:19.547Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

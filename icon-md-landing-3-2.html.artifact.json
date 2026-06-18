@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "ICON MD Medical Spa — Polished Landing Page v3",
+  "entry": "icon-md-landing-3-2.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "primary": true,
+  "createdAt": "2026-06-18T13:42:38.514Z",
+  "updatedAt": "2026-06-18T13:42:38.567Z",
+  "sourceSkillId": "agent-browser",
+  "designSystemId": "default",
+  "metadata": {
+    "identifier": "icon-md-landing-3",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}
