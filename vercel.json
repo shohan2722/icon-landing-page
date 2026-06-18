@@ -1,6 +1,3 @@
-﻿{
-  "name": "icon-landing-page",
-  "public": true,
-  "buildCommand": "",
-  "outputDirectory": "."
+{
+  "name": "icon-landing-page"
 }
